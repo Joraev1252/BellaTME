@@ -1,6 +1,6 @@
 from django.contrib import admin
 from partners.models import PartnersModel
-
+from modeltranslation.admin import TranslationAdmin
 
 class TodoAdmin(admin.ModelAdmin):
     list_display = ('id', 'link', )

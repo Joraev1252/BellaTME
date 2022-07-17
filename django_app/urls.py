@@ -21,11 +21,15 @@ from django.urls import path, include, re_path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/v1/', include('comments.api.urls')),
     path('api/v1/', include('free_lesson.api.urls')),
+]
+
+urlpatterns += i18n_patterns(
     path('api/v1/', include('courses.api.urls')),
     path('api/v1/', include('partners.api.urls')),
-    path('api/v1/', include('comments.api.urls')),
-]
+
+)
 
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
